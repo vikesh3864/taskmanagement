@@ -85,7 +85,7 @@ function LoginPage() {
                 </form>
 
                 <div style={{ textAlign: 'center', marginTop: '1.5rem', color: 'var(--text-muted)', fontSize: '0.82rem' }}>
-                    Default admin: <strong>admin</strong> / <strong>admin123</strong>
+                   
                 </div>
             </div>
         </div>
