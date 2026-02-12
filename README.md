@@ -102,10 +102,7 @@ npm run dev
 - **Backend API:** http://localhost:8000/api/
 - **Django Admin:** http://localhost:8000/admin/
 
-### Default Credentials
 
-- **Username:** admin
-- **Password:** admin123
 
 ## API Endpoints
 
