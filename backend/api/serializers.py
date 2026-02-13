@@ -33,7 +33,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserListSerializer(serializers.ModelSerializer):
-    """Lightweight serializer for user lists (used in dropdowns, assignments)."""
+   
 
     class Meta:
         model = User

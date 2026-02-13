@@ -10,12 +10,7 @@ from .permissions import TaskPermission, UserPermission
 
 
 class UserViewSet(viewsets.ModelViewSet):
-    """
-    ViewSet for User management.
-    - Admin: Full CRUD access
-    - Manager: Can list all users
-    - Member: Can view own profile
-    """
+   
 
     queryset = User.objects.all()
     permission_classes = [IsAuthenticated, UserPermission]
@@ -39,12 +34,7 @@ class UserViewSet(viewsets.ModelViewSet):
 
 
 class TaskViewSet(viewsets.ModelViewSet):
-    """
-    ViewSet for Task management.
-    - Admin: Full access to all tasks
-    - Manager: CRUD on own tasks, can assign to members
-    - Member: View and update status of assigned tasks
-    """
+  
 
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticated, TaskPermission]
@@ -63,11 +53,11 @@ class TaskViewSet(viewsets.ModelViewSet):
         # Manager sees tasks they created
         elif user.role == 'manager':
             qs = queryset.filter(created_by=user)
-        # Member sees only tasks assigned to them
+      
         else:
             qs = queryset.filter(assigned_to=user)
 
-        # Optional query param filters
+       
         status_filter = self.request.query_params.get('status')
         if status_filter:
             qs = qs.filter(status=status_filter)
@@ -94,7 +84,7 @@ class CurrentUserView(APIView):
 
 
 class RegisterView(APIView):
-    """Public registration endpoint (creates member users)."""
+
 
     permission_classes = [AllowAny]
 
